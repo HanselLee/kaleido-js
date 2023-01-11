@@ -1,17 +1,17 @@
 pragma solidity ^0.5.2;
 
 contract simplestorage {
-   uint public storedData;
+   string public storedData;
 
    event DataStored (
-      uint data
+      string data
    );
 
-   constructor(uint initVal) public {
+   constructor(string initVal) public {
       storedData = initVal;
    }
 
-   function set(uint x) public returns (uint value) {
+   function set(string x) public returns (string value) {
       require(x < 100, "Value can not be over 100");
       storedData = x;
 
@@ -20,11 +20,11 @@ contract simplestorage {
       return storedData;
    }
 
-   function get() view public returns (uint retVal) {
+   function get() view public returns (string retVal) {
       return storedData;
    }
 
-   function query() view public returns (uint retVal) {
+   function query() view public returns (string retVal) {
       return storedData;
    }
 }

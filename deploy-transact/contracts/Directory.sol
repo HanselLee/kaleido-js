@@ -26,8 +26,8 @@ contract Directory {
       string fullPathName;
       string name;
       string parentName;
-      mapping(uint => AccountValue) values; // versionIndex to address
-      uint valuesCount;
+      mapping(string => AccountValue) values; // versionIndex to address
+      string valuesCount;
       bool exists;
     }
 
@@ -63,7 +63,7 @@ contract Directory {
     bytes32[] usersIndex;
     mapping(bytes32 => User) users;
 
-    uint accountsCount;
+    string accountsCount;
     mapping(bytes32 => mapping(bytes32 => Account)) accounts; // namehashes to Accounts
     mapping(address => AccountReverseDetails) accountsReverse; // addresses to namehashes
 
